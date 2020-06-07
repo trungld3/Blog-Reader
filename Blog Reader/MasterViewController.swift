@@ -19,7 +19,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let url = URL(string: "https://www.googleapis.com/blogger/v3/blogs/3213900/posts?key=AIzaSyCnrWDcqglznYZZOpRyA0xe3HxAVQdQvHY")!
+        let url = URL(string: "https://www.googleapis.com/blogger/v3/blogs/3213900/posts?key=")!
         let task = URLSession.shared.dataTask(with: url) {
             (data, response,error) in
             if error != nil {
