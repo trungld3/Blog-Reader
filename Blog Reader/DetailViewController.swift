@@ -7,17 +7,19 @@
 //
 
 import UIKit
-
+import WebKit
 class DetailViewController: UIViewController {
 
+    @IBOutlet var webView: WKWebView!
+    
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.timestamp!.description
+            if let blogWebview = self.webView {
+                blogWebview.loadHTMLString((detail.value(forKey: "title") as! String), baseURL: nil)
             }
         }
     }
